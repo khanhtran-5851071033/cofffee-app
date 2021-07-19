@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   ];
   List listIcon = [
     Icons.home_outlined,
-    Icons.coffee_outlined,
+    Icons.cake,
     Icons.storefront_outlined,
     Icons.confirmation_num_outlined,
     Icons.menu_rounded

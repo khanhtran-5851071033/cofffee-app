@@ -19,7 +19,7 @@ class _AppPageState extends State<AppPage> {
       'screen': SettingPage()
     },
     {
-      'icon': Icons.bookmark_added_outlined,
+      'icon': Icons.sanitizer,
       'title': 'Địa chỉ đã lưu',
       'screen': SettingPage()
     },
@@ -29,7 +29,7 @@ class _AppPageState extends State<AppPage> {
       'screen': SettingPage()
     },
     {
-      'icon': Icons.logout_outlined,
+      'icon': Icons.single_bed_outlined,
       'title': 'Đăng nhập',
       'screen': SettingPage()
     },

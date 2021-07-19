@@ -1,7 +1,6 @@
 import 'package:coffee/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'screens/home_page.dart';
 
 void main() {
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Coffee',
-      theme: ThemeData(primaryColor: myColor),
+      theme: ThemeData(primaryColor: myColor, fontFamily: 'Nunito',),
       home: HomePage(),
     );
   }

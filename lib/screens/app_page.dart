@@ -1,3 +1,4 @@
+import 'package:coffee/screens/app_page/contact_comment.dart';
 import 'package:coffee/screens/app_page/setting_page.dart';
 import 'package:coffee/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +10,16 @@ class AppPage extends StatefulWidget {
 
 class _AppPageState extends State<AppPage> {
   List listSupport = [
-    {'icon': Icons.star_outline_rounded, 'title': 'Đánh giá đơn hàng'},
-    {'icon': Icons.chat_bubble_outline, 'title': 'Liên hệ góp ý'},
+    {
+      'icon': Icons.star_outline_rounded,
+      'title': 'Đánh giá đơn hàng',
+      'screen': SettingPage()
+    },
+    {
+      'icon': Icons.chat_bubble_outline,
+      'title': 'Liên hệ và góp ý',
+      'screen': ContactAndComment()
+    },
   ];
   List listAccount = [
     {

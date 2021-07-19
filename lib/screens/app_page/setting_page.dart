@@ -1,4 +1,6 @@
+import 'package:coffee/utils/colors.dart';
 import 'package:coffee/widgets/appbar-normal.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SettingPage extends StatefulWidget {
@@ -7,12 +9,12 @@ class SettingPage extends StatefulWidget {
 }
 
 class _SettingPageState extends State<SettingPage> {
+  bool isNotify = true;
   List listSetting = [
     {'icon': Icons.notifications_active_outlined, 'title': 'Nhận thông báo'},
     {'icon': Icons.link_rounded, 'title': 'Liên kết tài khoản'},
     {'icon': Icons.info_outline_rounded, 'title': 'Về chúng tôi'},
   ];
-  List<bool> isSelected = [true, false];
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +36,12 @@ class _SettingPageState extends State<SettingPage> {
                             listSetting.length,
                             (index) => InkWell(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          listSetting[index]['screen']),
-                                );
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //       builder: (context) =>
+                                //           listSetting[index]['screen']),
+                                // );
                               },
                               child: Container(
                                 width: double.maxFinite,
@@ -62,7 +64,11 @@ class _SettingPageState extends State<SettingPage> {
                                 child: Row(
                                   children: [
                                     Icon(
-                                      listSetting[index]['icon'],
+                                      index == 0
+                                          ? isNotify
+                                              ? listSetting[index]['icon']
+                                              : Icons.notifications_off_outlined
+                                          : listSetting[index]['icon'],
                                       color: Colors.black,
                                       size: 20,
                                     ),
@@ -73,7 +79,15 @@ class _SettingPageState extends State<SettingPage> {
                                         child:
                                             Text(listSetting[index]['title'])),
                                     index == 0
-                                        ? Container()
+                                        ? CupertinoSwitch(
+                                            value: isNotify,
+                                            activeColor: buttonColor,
+                                            trackColor: greyColor,
+                                            onChanged: (val) {
+                                              setState(() {
+                                                isNotify = val;
+                                              });
+                                            })
                                         : Icon(
                                             Icons.arrow_forward_ios_rounded,
                                             color: Colors.black,

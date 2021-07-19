@@ -1,4 +1,5 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:coffee/screens/app_page/promotion.dart';
 import 'package:coffee/screens/intro_page.dart';
 import 'package:coffee/screens/app_page.dart';
 import 'package:coffee/screens/store_page.dart';
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     StorePage(
       isSearch: false,
     ),
-    Container(),
+    PromotionPage(),
     AppPage()
   ];
   List listIcon = [
@@ -51,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(listIcon[index]),
                   title: Text(listTitle[index]),
                   activeColor: buttonColor,
-                  inactiveColor: Colors.grey),
+                  inactiveColor: Colors.grey[700]),
             )));
   }
 }

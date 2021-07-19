@@ -16,6 +16,7 @@ class _IntroPageState extends State<IntroPage> {
     'assets/images/background5.PNG'
   ];
 
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

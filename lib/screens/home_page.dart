@@ -16,14 +16,14 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _children = [
     IntroPage(),
     Container(),
-    StorePage(),
+    StorePage(isSearch: false,),
     Container(),
     Container()
   ];
   List listIcon = [
-    Icons.home,
-    Icons.coffee,
-    Icons.store,
+    Icons.home_outlined,
+    Icons.coffee_outlined,
+    Icons.storefront_outlined,
     Icons.confirmation_num_outlined,
     Icons.menu_rounded
   ];

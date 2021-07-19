@@ -45,10 +45,7 @@ class _StorePageState extends State<StorePage> {
   ];
   List detailStore = [
     {'icon': Icons.send_outlined, 'title': ''},
-    {
-      'icon': Icons.favorite_outline_rounded,
-      'title': 'Thêm vào danh sách yêu thích'
-    },
+    { 'icon': Icons.favorite_outline_rounded, 'title': 'Thêm vào danh sách yêu thích' },
     {'icon': Icons.call, 'title': 'Liên hệ'},
     {'icon': Icons.share_rounded, 'title': 'Chia sẻ với bạn bè'}
   ];
@@ -341,10 +338,7 @@ class _StorePageState extends State<StorePage> {
             ]),
         body: Container(
           height: size.height,
-          child: isMap
-              ? Center(
-                  child: Text('Google Map'),
-                )
+          child: isMap ? Center( child: Text('Google Map'))
               : Scrollbar(
                   thickness: 5,
                   radius: Radius.circular(5),

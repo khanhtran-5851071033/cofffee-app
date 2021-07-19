@@ -1,5 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:coffee/screens/intro_page.dart';
+import 'package:coffee/screens/app_page.dart';
 import 'package:coffee/screens/store_page.dart';
 import 'package:coffee/utils/colors.dart';
 import 'package:coffee/widgets/appbar_homepage.dart';
@@ -16,9 +17,11 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _children = [
     IntroPage(),
     Container(),
-    StorePage(isSearch: false,),
+    StorePage(
+      isSearch: false,
+    ),
     Container(),
-    Container()
+    AppPage()
   ];
   List listIcon = [
     Icons.home_outlined,

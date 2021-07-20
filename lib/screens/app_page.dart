@@ -1,5 +1,6 @@
 import 'package:coffee/screens/app_page/contact_comment.dart';
 import 'package:coffee/screens/app_page/setting_page.dart';
+import 'package:coffee/screens/login_page/login_page.dart';
 import 'package:coffee/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +41,7 @@ class _AppPageState extends State<AppPage> {
     {
       'icon': Icons.single_bed_outlined,
       'title': 'Đăng nhập',
-      'screen': SettingPage()
+      'screen': LoginPage()
     },
   ];
   @override

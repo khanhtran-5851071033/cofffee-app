@@ -35,6 +35,10 @@ TextButton buttonLogin(String title, VoidCallback callbackAction) => TextButton(
             RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ))));
+
+
+
+        
 TextButton buttonApple(VoidCallback callbackAction) => TextButton.icon(
     label: Padding(
       padding: EdgeInsets.symmetric(vertical: 5),
@@ -54,6 +58,8 @@ TextButton buttonApple(VoidCallback callbackAction) => TextButton.icon(
             RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ))));
+
+
 TextButton buttonFb(VoidCallback callbackAction) => TextButton.icon(
     label: Padding(
       padding: EdgeInsets.symmetric(vertical: 5),
@@ -73,6 +79,10 @@ TextButton buttonFb(VoidCallback callbackAction) => TextButton.icon(
             RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ))));
+
+
+
+
 TextButton buttonGg(VoidCallback callbackAction) => TextButton.icon(
     label: Padding(
       padding: EdgeInsets.symmetric(vertical: 5),

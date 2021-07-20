@@ -168,7 +168,7 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     SizedBox(
-                      height: 5,
+                      height: 10,
                     ),
                     Row(
                       children: [
@@ -176,7 +176,7 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     SizedBox(
-                      height: 5,
+                      height: 10,
                     ),
                     Row(
                       children: [

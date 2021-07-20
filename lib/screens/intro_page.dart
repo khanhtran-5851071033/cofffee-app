@@ -16,7 +16,6 @@ class _IntroPageState extends State<IntroPage> {
     'assets/images/background5.PNG'
   ];
 
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -91,9 +90,9 @@ class _IntroPageState extends State<IntroPage> {
             ),
           ),
           DraggableScrollableSheet(
-              initialChildSize: .4,
-              maxChildSize: .6,
-              minChildSize: .2,
+              initialChildSize: .43,
+              maxChildSize: 1,
+              minChildSize: .4,
               builder:
                   (BuildContext context, ScrollController scrollController) {
                 return Container(
@@ -114,6 +113,7 @@ class _IntroPageState extends State<IntroPage> {
                   ),
                   child: ListView(
                     controller: scrollController,
+                    physics: BouncingScrollPhysics(),
                     children: [
                       Icon(
                         Icons.horizontal_rule_rounded,

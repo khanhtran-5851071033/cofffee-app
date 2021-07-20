@@ -8,6 +8,8 @@ import 'package:coffee/widgets/appbar_homepage.dart';
 import 'package:coffee/widgets/appbar_main.dart';
 import 'package:flutter/material.dart';
 
+import 'booking_Page.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -17,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     IntroPage(),
-    Container(),
+    BookingPage(),
     StorePage(
       isSearch: false,
     ),

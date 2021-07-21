@@ -44,7 +44,7 @@ class _StorePageState extends State<StorePage> {
     },
   ];
   List detailStore = [
-    {'icon': Icons.send_outlined, 'title': ''},
+    {'icon': Icons.near_me_outlined, 'title': ''},
     { 'icon': Icons.favorite_outline_rounded, 'title': 'Thêm vào danh sách yêu thích' },
     {'icon': Icons.call, 'title': 'Liên hệ'},
     {'icon': Icons.share_rounded, 'title': 'Chia sẻ với bạn bè'}

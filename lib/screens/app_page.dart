@@ -1,4 +1,5 @@
 import 'package:coffee/screens/app_page/contact_comment.dart';
+import 'package:coffee/screens/app_page/privacy_policy_page.dart';
 import 'package:coffee/screens/app_page/setting_page.dart';
 import 'package:coffee/screens/login_page/login_page.dart';
 import 'package:coffee/utils/colors.dart';
@@ -55,7 +56,7 @@ class _AppPageState extends State<AppPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              service(size),
+              service(size, context),
               support(context, size, listSupport),
               account(context, size, listAccount)
             ],
@@ -66,7 +67,7 @@ class _AppPageState extends State<AppPage> {
   }
 }
 
-Widget service(Size size) {
+Widget service(Size size, BuildContext context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -85,14 +86,20 @@ Widget service(Size size) {
                 Icons.description_outlined,
                 color: buttonColor,
               ),
-              size),
+              size, () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => PrivacyPage()));
+          }),
           card(
               'Điều khoản',
               Icon(
                 Icons.admin_panel_settings_outlined,
                 color: Colors.purple,
               ),
-              size),
+              size, () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => PrivacyPage()));
+          }),
         ],
       ),
       Row(
@@ -103,7 +110,10 @@ Widget service(Size size) {
                 Icons.music_note_rounded,
                 color: Colors.lightGreen,
               ),
-              size),
+              size, () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => PrivacyPage()));
+          }),
         ],
       ),
     ],
@@ -189,25 +199,32 @@ Widget item(BuildContext context, Size size, List list) {
   );
 }
 
-Widget card(String title, Icon icon, Size size) {
+Widget card(String title, Icon icon, Size size, VoidCallback function) {
   return Expanded(
     child: Card(
-      child: Container(
-          padding: EdgeInsets.all(size.width * 0.03),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              icon,
-              SizedBox(
-                height: 5,
-              ),
-              Text(
-                title,
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
-              )
-            ],
-          )),
+      child: InkWell(
+        splashColor: Colors.white,
+        focusColor: Colors.white,
+        hoverColor: Colors.white,
+        highlightColor: Colors.white,
+        onTap: function,
+        child: Container(
+            padding: EdgeInsets.all(size.width * 0.03),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                icon,
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  title,
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.w600),
+                )
+              ],
+            )),
+      ),
     ),
   );
 }

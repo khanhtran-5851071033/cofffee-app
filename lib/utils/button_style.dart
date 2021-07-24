@@ -19,22 +19,29 @@ TextButton button(String title, VoidCallback callbackAction) => TextButton(
           borderRadius: BorderRadius.circular(10),
         ))));
 
-TextButton buttonLogin(String title, VoidCallback callbackAction) => TextButton(
-    child: Padding(
-      padding: EdgeInsets.symmetric(vertical: 5),
-      child: Text(title),
-    ),
-    onPressed: callbackAction,
-    style: ButtonStyle(
-        overlayColor:
-            MaterialStateProperty.all<Color>(Colors.white.withOpacity(.4)),
-        backgroundColor:
-            MaterialStateProperty.all<Color>(Colors.grey.withOpacity(.7)),
-        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ))));
+TextButton buttonLogin(
+        String title, bool isComplete, VoidCallback callbackAction) =>
+    TextButton(
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 5),
+          child: Text(title),
+        ),
+        onPressed: () {
+          if (isComplete) {
+            callbackAction();
+          }
+        },
+        style: ButtonStyle(
+            overlayColor: MaterialStateProperty.all<Color>(
+                isComplete ? Colors.white.withOpacity(.4) : Colors.transparent),
+            backgroundColor: MaterialStateProperty.all<Color>(
+                isComplete ? buttonColor : Colors.grey.withOpacity(.7)),
+            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ))));
+
 TextButton buttonApple(VoidCallback callbackAction) => TextButton.icon(
     label: Padding(
       padding: EdgeInsets.symmetric(vertical: 5),
@@ -54,6 +61,7 @@ TextButton buttonApple(VoidCallback callbackAction) => TextButton.icon(
             RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ))));
+
 TextButton buttonFb(VoidCallback callbackAction) => TextButton.icon(
     label: Padding(
       padding: EdgeInsets.symmetric(vertical: 5),
@@ -73,6 +81,7 @@ TextButton buttonFb(VoidCallback callbackAction) => TextButton.icon(
             RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ))));
+
 TextButton buttonGg(VoidCallback callbackAction) => TextButton.icon(
     label: Padding(
       padding: EdgeInsets.symmetric(vertical: 5),

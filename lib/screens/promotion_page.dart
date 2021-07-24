@@ -76,7 +76,7 @@ class _PromotionPageState extends State<PromotionPage> {
                       tileMode: TileMode.repeated)),
               child: Container(
                 padding: EdgeInsets.symmetric(
-                    horizontal: size.width * 0.03, vertical: size.width * 0.08),
+                    horizontal: size.width * 0.03, vertical: size.width * 0.1),
                 decoration: BoxDecoration(
                     gradient: new LinearGradient(
                         colors: [

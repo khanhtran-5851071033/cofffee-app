@@ -1,5 +1,5 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
-import 'package:coffee/screens/app_page/promotion.dart';
+import 'package:coffee/screens/promotion_page.dart';
 import 'package:coffee/screens/intro_page.dart';
 import 'package:coffee/screens/app_page.dart';
 import 'package:coffee/screens/store_page.dart';
@@ -53,6 +53,7 @@ class _HomePageState extends State<HomePage> {
               (index) => BottomNavyBarItem(
                   icon: Icon(listIcon[index]),
                   title: Text(listTitle[index]),
+                  textAlign: TextAlign.center,
                   activeColor: buttonColor,
                   inactiveColor: Colors.grey[700]),
             )));

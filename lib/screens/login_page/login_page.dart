@@ -8,6 +8,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool isCompleteNumber = false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -93,6 +94,13 @@ class _LoginPageState extends State<LoginPage> {
                       height: 50,
                       child: TextFormField(
                         cursorColor: buttonColor,
+                        onChanged: (val) {
+                          setState(() {
+                            val.length >= 9
+                                ? isCompleteNumber = true
+                                : isCompleteNumber = false;
+                          });
+                        },
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                             focusedBorder: OutlineInputBorder(
@@ -140,7 +148,11 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Row(
                       children: [
-                        Expanded(child: buttonLogin('Đăng nhập', () {})),
+                        Expanded(
+                            child:
+                                buttonLogin('Đăng nhập', isCompleteNumber, () {
+                          print('logined');
+                        })),
                       ],
                     ),
                     SizedBox(
@@ -168,7 +180,7 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     SizedBox(
-                      height: 5,
+                      height: 10,
                     ),
                     Row(
                       children: [
@@ -176,7 +188,7 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     SizedBox(
-                      height: 5,
+                      height: 10,
                     ),
                     Row(
                       children: [

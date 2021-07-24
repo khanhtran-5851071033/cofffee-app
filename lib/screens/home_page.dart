@@ -1,7 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
-import 'package:coffee/screens/promotion_page.dart';
-import 'package:coffee/screens/intro_page.dart';
 import 'package:coffee/screens/app_page.dart';
+import 'package:coffee/screens/intro_page.dart';
+import 'package:coffee/screens/promotion_page.dart';
 import 'package:coffee/screens/store_page.dart';
 import 'package:coffee/utils/colors.dart';
 import 'package:coffee/widgets/appbar_homepage.dart';
@@ -40,7 +40,9 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: myColor,
         appBar: _currentIndex == 0
             ? appbarHome('Chào bạn mới')
-            : appbarMain(listTitle[_currentIndex]),
+            : _currentIndex == 1
+                ? appBarBooking()
+                : appbarMain(listTitle[_currentIndex]),
         body: _children[_currentIndex],
         bottomNavigationBar: BottomNavyBar(
             selectedIndex: _currentIndex,
@@ -57,5 +59,42 @@ class _HomePageState extends State<HomePage> {
                   activeColor: buttonColor,
                   inactiveColor: Colors.grey[700]),
             )));
+  }
+
+  AppBar appBarBooking() {
+    return AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Container(
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 5),
+                child: Icon(Icons.delivery_dining,color: Colors.grey),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Giao Đến',
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.bold),
+                      ),
+                      Icon(Icons.arrow_drop_down_outlined)
+                    ],
+                  ),
+                  Text(
+                    'Các sản phẩm sẽ được giao đến địa chỉ của bạn',
+                    style: TextStyle(fontSize: 14),
+                  )
+                ],
+              )
+            ],
+          ),
+        ));
   }
 }

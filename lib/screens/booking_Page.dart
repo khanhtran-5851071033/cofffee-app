@@ -198,10 +198,43 @@ class _BookingPageState extends State<BookingPage> {
                                         color: Colors.white,
                                         width: size.width,
                                         margin: EdgeInsets.only(top: 10),
+                                        padding: EdgeInsets.only(
+                                            left: 20, right: 20, top: 20),
                                         child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
-                                            Text('Yeu Cau Khac'),
-                                            Text('Nhung tuy chon khac')
+                                            Text(
+                                              'Yeu Cau Khac',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            Text('Nhung tuy chon khac'),
+                                            Container(
+                                              height: 35,
+                                              alignment: Alignment.centerLeft,
+                                              padding: EdgeInsets.only(left: 6),
+                                              margin: EdgeInsets.symmetric(
+                                                  vertical: 10),
+                                              decoration: BoxDecoration(
+                                                  border: Border.all(
+                                                      width: 1.0,
+                                                      color: Colors.grey
+                                                          .withOpacity(0.5)),
+                                                  borderRadius:
+                                                      BorderRadius.circular(8)),
+                                              child: Text(
+                                                'Thêm ghi chú',
+                                                style: TextStyle(
+                                                    color: Colors.grey
+                                                        .withOpacity(0.5)),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 100,
+                                            )
                                           ],
                                         ),
                                       )
@@ -233,6 +266,69 @@ class _BookingPageState extends State<BookingPage> {
                               ),
                             ),
                           ),
+                          Positioned(
+                              bottom: 0,
+                              child: Container(
+                                width: size.width,
+                                height: 180,
+                                padding: EdgeInsets.only(
+                                    top: 20, left: 20, right: 20),
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border(
+                                      top: BorderSide(
+                                        color: Colors.grey.withOpacity(0.5),
+                                        width: 1.0,
+                                      ),
+                                    )),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          alignment: Alignment.center,
+                                          height: 30,
+                                          width: 30,
+                                          decoration: BoxDecoration(
+                                              color:
+                                                  Colors.grey.withOpacity(0.2),
+                                              borderRadius:
+                                                  BorderRadius.circular(8)),
+                                          child: Text('-',style:TextStyle(fontWeight: FontWeight.bold)),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 25, right: 25),
+                                          child: Text('1',style:TextStyle(fontWeight: FontWeight.bold)),
+                                        ),
+                                        Container(
+                                          alignment: Alignment.center,
+                                          height: 30,
+                                          width: 30,
+                                          decoration: BoxDecoration(
+                                              color:
+                                                  Colors.grey.withOpacity(0.2),
+                                              borderRadius:
+                                                  BorderRadius.circular(8)),
+                                          child: Text('+',style:TextStyle(fontWeight: FontWeight.bold)),
+                                        ),
+                                      ],
+                                    ),
+                                    Container(
+                                      alignment: Alignment.center,
+                                      height: 50,
+                                      margin: const EdgeInsets.only(top: 15),
+                                      decoration: BoxDecoration(
+                                          color: Colors.orange,
+                                          borderRadius:
+                                              BorderRadius.circular(8)),
+                                      child: Text('Chọn sản phẩm - 56.000đ'),
+                                    ),
+                                  ],
+                                ),
+                              ))
                         ],
                       );
                     },
@@ -289,7 +385,7 @@ class _BookingPageState extends State<BookingPage> {
                           ),
                         )
                       : Text(
-                          _scrollPosition == 0.0
+                          _scrollPosition == 0.0 || _scrollPosition == null
                               ? 'Thực Đơn'
                               : 'Cà Phê Gói- Cà phê Uống Liền',
                           style: TextStyle(color: Colors.black, fontSize: 16)),

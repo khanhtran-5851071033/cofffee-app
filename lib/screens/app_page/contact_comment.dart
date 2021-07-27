@@ -28,7 +28,7 @@ class _ContactAndCommentState extends State<ContactAndComment> {
       'screen': SettingPage()
     },
     {
-      'icon': Icons.facebook_outlined,
+      'icon': Icons.face_outlined,
       'title': 'Facebook',
       'sub': 'facebook.com/The.Coffee.House.2014',
       'screen': SettingPage()
